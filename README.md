@@ -24,7 +24,7 @@ This project is built using **Streamlit** and **PyHarmonic** to provide a robust
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/arashlml/crypto-harmonic.git
    ```
 
 2. Navigate to the project root directory:
