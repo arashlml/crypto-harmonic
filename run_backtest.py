@@ -30,10 +30,10 @@ timeframe_options={
 
 horizon = 10000
 with col1:
-    symbol=st.selectbox("Select symbol",symbol_options)
+    symbol=st.selectbox(label="Select symbol",index='ETHUSDT',options=symbol_options)
 
 with col2:
-    timeframe=st.selectbox("Select timeframe",timeframe_options.keys())
+    timeframe=st.selectbox(label="Select timeframe",index='5 minutes',options=timeframe_options.keys())
     if st.button("Show the patterns 📈"):
         with st.spinner("Loading the patterns..."):
             fig = find_harmonic_patterns(symbol, timeframe_options[timeframe], horizon)
@@ -51,6 +51,7 @@ with col1:
             df_results = evaluate_all(df_prices, df_signals)
             stats = compute_statistics(df_results)
             st.write(f'Win rate: {stats["win_rate"]} ')
+            st.write(f'Risk to reward: {stats["risk_to_reward"]}')
             st.write(f"Average return: {stats["avg_return"]}")
             st.write(f"profit factor: {stats['profit_factor']}")
             st.write(f"sharpe ratio: {stats['sharpe_ratio']}")
