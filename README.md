@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is built using **Streamlit** and **PyHarmonic** to provide a robust tool for backtesting and visualizing candlestick patterns on your preferred cryptocurrency. It analyzes the last 10,000 candles and displays identified patterns. Users can customize the analysis by selecting their desired symbol and timeframe.
+This project is built using **Streamlit** and **PyHarmonics** to provide a robust tool for backtesting and visualizing candlestick patterns on your preferred cryptocurrency. It analyzes the last 10,000 candles and displays identified patterns. Users can customize the analysis by selecting their desired symbol and timeframe.
 
 ## Features
 
