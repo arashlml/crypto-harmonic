@@ -30,7 +30,7 @@ This project is built using **Streamlit** and **PyHarmonic** to provide a robust
 2. Navigate to the project root directory:
 
    ```bash
-   cd <project-directory>
+   cd crypto-harmonic
    ```
 
 3. Run the application using Docker Compose:
