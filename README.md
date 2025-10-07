@@ -41,7 +41,7 @@ This project is built using **Streamlit** and **PyHarmonic** to provide a robust
 
 ### Usage
 
-- Once the application is running, access the Streamlit interface via your browser (typically at `http://localhost:8501`).
+- Once the application is running, access the Streamlit interface via your browser at `http://localhost:8501`.
 - Select your desired cryptocurrency symbol and timeframe.
 - View the backtest results and visualized candlestick patterns.
 
