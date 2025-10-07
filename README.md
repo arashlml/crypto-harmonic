@@ -17,20 +17,20 @@ This project is built using **Streamlit** and **PyHarmonic** to provide a robust
 
 ### Prerequisites
 
-- Docker and Docker Compose installed on your system.
+- Docker installed on your system.
 
 ### Installation
 
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/arashlml/crypto-harmonic.git
    ```
 
 2. Navigate to the project root directory:
 
    ```bash
-   cd <project-directory>
+   cd crypto-harmonic
    ```
 
 3. Run the application using Docker Compose:
@@ -41,7 +41,7 @@ This project is built using **Streamlit** and **PyHarmonic** to provide a robust
 
 ### Usage
 
-- Once the application is running, access the Streamlit interface via your browser (typically at `http://localhost:8501`).
+- Once the application is running, access the Streamlit interface via your browser at `http://localhost:8501`.
 - Select your desired cryptocurrency symbol and timeframe.
 - View the backtest results and visualized candlestick patterns.
 
