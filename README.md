@@ -17,7 +17,7 @@ This project is built using **Streamlit** and **PyHarmonic** to provide a robust
 
 ### Prerequisites
 
-- Docker and Docker Compose installed on your system.
+- Docker installed on your system.
 
 ### Installation
 
