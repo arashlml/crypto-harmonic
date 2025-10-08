@@ -1,4 +1,4 @@
-from pyharmonics import  Position, Technicals
+from pyharmonics import Position, Technicals, PositionPlotter
 from pyharmonics.marketdata import  BinanceCandleData
 from pyharmonics.search import HarmonicSearch
 
@@ -14,5 +14,7 @@ def find_positions(symbol,intervals,horizon):
     for pattern in patterns['XABCD']:
         position = Position(pattern,  pattern.y[-1], 1000)
         positions.append(position)
-    return positions
+    position = positions[0]
+    p = PositionPlotter(t, position)
+    return p.main_plot,positions
 

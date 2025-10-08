@@ -13,6 +13,7 @@ st.set_page_config(page_title="My App", page_icon="💸", layout="wide")
 
 
 st.title("Harmonic patterns performance on cryptos 🪙")
+horizon = st.number_input(label="Horizon",value=100,min_value=100,max_value=10000,step=1,width=870)
 col1 , col2 = st.columns(2)
 df=pd.read_csv("symbols.csv")
 symbol_options=df.values
@@ -27,23 +28,21 @@ timeframe_options={
         "1 week": '1w',
         "1 month": '1M'
     }
-
-horizon = 10000
 with col1:
-    symbol=st.selectbox(label="Select symbol",index='ETHUSDT',options=symbol_options)
+    symbol=st.selectbox(label="Select symbol",options=symbol_options)
 
 with col2:
-    timeframe=st.selectbox(label="Select timeframe",index='5 minutes',options=timeframe_options.keys())
-    if st.button("Show the patterns 📈"):
-        with st.spinner("Loading the patterns..."):
+    timeframe=st.selectbox(label="Select timeframe",options=timeframe_options.keys())
+    if  st.button("Show the patterns 📈"):
+        with st.spinner(f"Loading the patterns for {horizon} candles..."):
             fig = find_harmonic_patterns(symbol, timeframe_options[timeframe], horizon)
             st.plotly_chart(fig, use_container_width=True)
 
 intervals = timeframe_options[timeframe]
 with col1:
     if st.button("Run backtest 📉"):
-        with st.spinner('Calculating the performance for 10000 candles...'):
-            positions = find_positions(symbol, intervals, horizon)
+        with st.spinner(f'Calculating the performance for {horizon} candles...'):
+            fig2,positions = find_positions(symbol, intervals, horizon)
             df_signals = collect_signals(positions)
             y = BinanceCandleData()
             y.get_candles(symbol, y.MIN_5, horizon)
@@ -56,7 +55,7 @@ with col1:
             st.write(f"profit factor: {stats['profit_factor']}")
             st.write(f"sharpe ratio: {stats['sharpe_ratio']}")
 
-
-
-
+    if st.button("Show the last position"):
+        fig2, positions = find_positions(symbol, intervals, horizon)
+        st.plotly_chart(fig2, use_container_width=True)
 

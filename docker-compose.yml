@@ -6,7 +6,5 @@ services:
     ports:
       - "8501:8501"        # Streamlit port
     volumes:
-      - ./outputs:/app/outputs  # Mount for outputs
-      - ./symbols.csv:/app/symbols.csv
       - ./:/app
     restart: unless-stopped

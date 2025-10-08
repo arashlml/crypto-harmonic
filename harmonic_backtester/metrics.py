@@ -1,6 +1,6 @@
 # harmonic_backtester/metrics.py
-import pandas as pd
 import numpy as np
+import pandas as pd
 
 def compute_statistics(df_results: pd.DataFrame):
     win_rate = ((df_results["result"] != "stop").mean())*100
@@ -9,8 +9,8 @@ def compute_statistics(df_results: pd.DataFrame):
         df_results.loc[df_results["return"] < 0, "return"].sum()
     )
     sharpe = df_results["return"].mean() / (df_results["return"].std() + 1e-9)
-    if df_results.loc[df_results["return"]<0,'return'] == 0:
-        risk_to_reward = 'No negative return'
+    if len(df_results.loc[df_results["return"]<0,'return']) == 0:
+        risk_to_reward = np.inf
     else:
         risk_to_reward= (df_results.loc[df_results["return"]>0,'return'].mean())/-(df_results.loc[df_results["return"]<0,'return'].mean())
 
